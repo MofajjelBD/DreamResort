@@ -1,7 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import LoginFood from "../../assets/login.jpg";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    signIn(email, password)
+      .then((result) => {
+        console.log(result.user);
+        // navigate after login
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   return (
     <>
       <section className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
@@ -11,7 +32,11 @@ const Login = () => {
             <p className="text-sm mt-4 text-[#002D74]">
               If you already a member, easily log in now.
             </p>
-            <form action="" className="flex flex-col gap-4">
+            <form
+              onSubmit={handleLogin}
+              action="/"
+              className="flex flex-col gap-4"
+            >
               <div className="relative mt-6">
                 <input
                   className="p-2 rounded-xl border w-full"

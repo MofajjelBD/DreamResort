@@ -1,7 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import RegisterFood from "../../assets/registration.jpg";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const name = form.get("name");
+    const photo = form.get("url");
+    const email = form.get("email");
+    const password = form.get("password");
+
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        // navigate after Registration
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   return (
     <>
       <section className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
@@ -11,7 +35,7 @@ const Register = () => {
             <p className="text-sm mt-4 text-[#002D74]">
               Welcome to easy registration here.
             </p>
-            <form action="" className="flex flex-col gap-4">
+            <form onSubmit={handleRegister} className="flex flex-col gap-4">
               <div className="relative mt-6">
                 <input
                   className="p-2 rounded-xl border w-full"
