@@ -1,12 +1,18 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import RegisterFood from "../../assets/registration.jpg";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const [isLoadingRegister, setIsLoadingRegister] = useState(true);
+
+  const handleImageLoad = () => {
+    setIsLoadingRegister(false);
+  };
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -29,7 +35,7 @@ const Register = () => {
   return (
     <>
       <section className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
-        <div className="bg-slate-400 rounded-2xl flex max-w-3xl p-5 items-center">
+        <div className="bg-slate-400 rounded-2xl flex max-w-3xl lg:w-[768px] p-5 items-center">
           <div className="md:w-1/2 px-6">
             <h2 className="font-bold text-3xl text-[#002D74]">Registration</h2>
             <p className="text-sm mt-4 text-[#002D74]">
@@ -141,7 +147,19 @@ const Register = () => {
             </div>
           </div>
           <div className="md:block hidden w-1/2">
-            <img className="rounded-2xl max-h-[1600px]" src={RegisterFood} />
+            {isLoadingRegister && (
+              <div className="flex justify-center items-center">
+                <div className="animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-blue-900"></div>
+              </div>
+            )}
+            <img
+              className={`rounded-2xl max-h-[1600px] ${
+                isLoadingRegister ? "hidden" : "block"
+              }`}
+              src={RegisterFood}
+              onLoad={handleImageLoad} // Set loading to false when the image is loaded
+              alt="Login Food" // Add alt attribute for accessibility
+            />
           </div>
         </div>
       </section>

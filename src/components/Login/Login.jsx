@@ -1,12 +1,18 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import LoginFood from "../../assets/login.jpg";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const [isLoadingLogin, setIsLoadingLogin] = useState(true);
+
+  const handleImageLoad = () => {
+    setIsLoadingLogin(false);
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -26,8 +32,8 @@ const Login = () => {
   return (
     <>
       <section className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
-        <div className="bg-slate-400 rounded-2xl flex max-w-3xl p-5 items-center">
-          <div className="md:w-1/2 px-6">
+        <div className="bg-slate-400 rounded-2xl flex max-w-3xl lg:w-[768px] p-5 items-center">
+          <div className="md:w-1/2 px-6 py-4">
             <h2 className="font-bold text-3xl text-[#002D74]">Login</h2>
             <p className="text-sm mt-4 text-[#002D74]">
               If you already a member, easily log in now.
@@ -153,7 +159,19 @@ const Login = () => {
             </div>
           </div>
           <div className="md:block hidden w-1/2">
-            <img className="rounded-2xl max-h-[1600px]" src={LoginFood} />
+            {isLoadingLogin && (
+              <div className="flex justify-center items-center">
+                <div className="animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-blue-900"></div>
+              </div>
+            )}
+            <img
+              className={`rounded-2xl max-h-[1600px] ${
+                isLoadingLogin ? "hidden" : "block"
+              }`}
+              src={LoginFood}
+              onLoad={handleImageLoad} // Set loading to false when the image is loaded
+              alt="Login Food" // Add alt attribute for accessibility
+            />
           </div>
         </div>
       </section>
