@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import RegisterFood from "../../assets/registration.jpg";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -24,7 +25,15 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        if (result.user) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Registration successful",
+            showConfirmButton: false,
+            timer: 2500,
+          });
+        }
         // navigate after Registration
         navigate(location?.state ? location.state : "/");
       })

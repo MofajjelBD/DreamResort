@@ -2,12 +2,49 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import LoginFood from "../../assets/login.jpg";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import {
+  getAuth,
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
+import app from "../../firebase/firebase.config";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
+  const auth = getAuth(app);
+  const providerGoogle = new GoogleAuthProvider();
+  const provider = new GithubAuthProvider();
+
+  const handleGoogleSingIn = () => {
+    signInWithPopup(auth, providerGoogle)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
+  const handleGitHubSingIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   const [isLoadingLogin, setIsLoadingLogin] = useState(true);
 
   const handleImageLoad = () => {
@@ -15,23 +52,48 @@ const Login = () => {
   };
 
   const handleLogin = (e) => {
+    setIsLoadingLogin(false);
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
     signIn(email, password)
       .then((result) => {
-        console.log(result.user);
+        result.user;
+        if (result.user) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Welcome to Freshy",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
         // navigate after login
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
-        console.error(error);
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(`"checkk"${errorCode}`);
+        console.log(`"checkk"${errorMessage}`);
+        if (errorCode) {
+          toast.error(`Your user and password don't match`, {
+            position: "top-right",
+            autoClose: 3600,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+        }
       });
   };
   return (
     <>
       <section className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
+        <ToastContainer></ToastContainer>
         <div className="bg-slate-400 rounded-2xl flex max-w-3xl lg:w-[768px] p-5 items-center">
           <div className="md:w-1/2 px-6 py-4">
             <h2 className="font-bold text-3xl text-[#002D74]">Login</h2>
@@ -105,7 +167,10 @@ const Login = () => {
               <p className="text-center text-sm">OR</p>
               <hr className="border-gray-300" />
             </div>
-            <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
+            <button
+              onClick={handleGoogleSingIn}
+              className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium"
+            >
               <svg
                 className="mr-3"
                 xmlns="http://www.w3.org/2000/svg"
@@ -131,7 +196,10 @@ const Login = () => {
               </svg>
               Login with Google
             </button>
-            <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-purple-300 font-medium">
+            <button
+              onClick={handleGitHubSingIn}
+              className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-purple-300 font-medium"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
