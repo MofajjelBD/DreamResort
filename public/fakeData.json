@@ -1,0 +1,114 @@
+[
+  {
+    "id": "001",
+    "title": "Margherita Pizza",
+    "segment_name": "Italian Cuisine",
+    "description": "A traditional Neapolitan pizza with fresh basil, mozzarella, and tomatoes.",
+    "price": 12.99,
+    "status": "sale",
+    "size": "12-inch pizza",
+    "location": "New York, NY",
+    "facilities": ["Wood-fired oven", "Outdoor seating", "Gluten-free option"],
+    "image": "../src/assets/Food_1.png"
+  },
+  {
+    "id": "002",
+    "title": "Sushi Deluxe",
+    "segment_name": "Japanese Cuisine",
+    "description": "Fresh sashimi and sushi rolls served with soy sauce and wasabi.",
+    "price": 18.99,
+    "status": "sale",
+    "size": "8-piece set",
+    "location": "Los Angeles, CA",
+    "facilities": ["Private dining", "Takeout", "Vegetarian options"],
+    "image": "../src/assets/Food_1.png"
+  },
+  {
+    "id": "003",
+    "title": "Chicken Tikka Masala",
+    "segment_name": "Indian Cuisine",
+    "description": "Tender chicken in a rich, creamy tomato sauce, served with naan bread.",
+    "price": 14.99,
+    "status": "sale",
+    "size": "Medium serving",
+    "location": "Chicago, IL",
+    "facilities": [
+      "Spicy level options",
+      "Outdoor seating",
+      "Vegetarian options"
+    ],
+    "image": "../src/assets/Food_3.png"
+  },
+  {
+    "id": "004",
+    "title": "Ribeye Steak",
+    "segment_name": "Steakhouse",
+    "description": "Grilled ribeye steak served with mashed potatoes and seasonal vegetables.",
+    "price": 28.99,
+    "status": "sale",
+    "size": "16 oz",
+    "location": "Houston, TX",
+    "facilities": ["Open kitchen", "Bar", "Private dining"],
+    "image": "../src/assets/Food_4.png"
+  },
+  {
+    "id": "005",
+    "title": "Tonkotsu Ramen",
+    "segment_name": "Japanese Noodles",
+    "description": "Rich pork broth with noodles, topped with chashu, eggs, and green onions.",
+    "price": 13.99,
+    "status": "sale",
+    "size": "Large bowl",
+    "location": "San Francisco, CA",
+    "facilities": ["Spicy option", "Vegan option", "Takeout"],
+    "image": "../src/assets/Food_1.png"
+  },
+  {
+    "id": "006",
+    "title": "Seafood Platter",
+    "segment_name": "Seafood",
+    "description": "A variety of fresh shrimp, oysters, and lobster served with dipping sauces.",
+    "price": 35.99,
+    "status": "sale",
+    "size": "Family-sized",
+    "location": "Miami, FL",
+    "facilities": ["Waterfront view", "Outdoor seating", "Gluten-free option"],
+    "image": "../src/assets/Food_2.png"
+  },
+  {
+    "id": "007",
+    "title": "Fettuccine Alfredo",
+    "segment_name": "Italian Pasta",
+    "description": "Creamy Alfredo sauce with fettuccine pasta, served with garlic bread.",
+    "price": 11.99,
+    "status": "sale",
+    "size": "Large portion",
+    "location": "Boston, MA",
+    "facilities": ["Indoor dining", "Family-friendly", "Gluten-free option"],
+    "image": "../src/assets/Food_3.png"
+  },
+  {
+    "id": "008",
+    "title": "Classic Cheeseburger",
+    "segment_name": "American Fast Food",
+    "description": "Juicy beef patty with cheddar cheese, lettuce, and tomatoes, served with fries.",
+    "price": 9.99,
+    "status": "sale",
+    "size": "6 oz burger",
+    "location": "Dallas, TX",
+    "facilities": ["Drive-thru", "Vegan option", "Outdoor seating"],
+    "image": "../src/assets/Food_4.png"
+  },
+  {
+    "id": "009",
+    "title": "Chocolate Lava Cake",
+    "segment_name": "Desserts",
+    "description": "Warm chocolate cake with a molten chocolate center, served with vanilla ice cream.",
+    "price": 7.99,
+    "status": "sale",
+    "size": "Single serving",
+    "location": "Seattle, WA",
+    "facilities": ["Indoor seating", "Takeout", "Gluten-free option"],
+    "image": "../src/assets/Food_3.png"
+  }
+]

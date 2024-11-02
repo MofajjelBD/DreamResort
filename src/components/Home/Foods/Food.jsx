@@ -1,6 +1,19 @@
+import PropTypes from "prop-types";
 import Food_1 from "../../../assets/Food_3.png";
 
-const Food = () => {
+const Food = ({ FoodData = {} }) => {
+  const {
+    // id,
+    title,
+    segment_name,
+    description,
+    price,
+    status,
+    size,
+    location,
+    facilities,
+    image,
+  } = FoodData;
   return (
     <>
       <div
@@ -9,12 +22,12 @@ const Food = () => {
       >
         <figure className="absolute top-0 left-0 !items-start rounded-full z-10">
           <div className="bg-transparent rounded-[16px] max-h-[240px] max-w-[240px] justify-center flex shadow-xl">
-            <img className="h-full w-auto" src={Food_1}></img>
+            <img className="h-full w-auto" src={image}></img>
           </div>
         </figure>
         <div className="absolute bottom-0 right-0 card-body bg-slate-700  font-Mulish max-h-[340px] sm:w-[340px] max-w-[340px] p-6 justify-end border border-gray-400 rounded-3xl">
           <h2 className="card-title text-2xl font-bold text-white justify-end py-6 z-10">
-            10.99$
+            {price}$
           </h2>
           <div className="flex gap-4 flex-wrap z-10">
             <span className="text-base text-green-500 font-medium rounded-full py-2 px-5 bg-green-50">
@@ -27,10 +40,10 @@ const Food = () => {
           <div className="flex justify-between flex-wrap py-3">
             <div>
               <h2 className="card-title text-2xl font-bold text-white">
-                Chessy Pizza
+                {title}
               </h2>
               <p className="text-base font-medium  text-white text-opacity-80">
-                With Special Sauce
+                {segment_name}
               </p>
             </div>
             <span className="my-auto text-white">Cart</span>
@@ -57,6 +70,10 @@ const Food = () => {
       </div>
     </>
   );
+};
+Food.propTypes = {
+  FoodData: PropTypes.any,
+  title: PropTypes.any,
 };
 
 export default Food;

@@ -9,12 +9,13 @@ const Register = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const [isLoadingRegister, setIsLoadingRegister] = useState(true);
 
   const handleImageLoad = () => {
     setIsLoadingRegister(false);
   };
-
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -22,6 +23,25 @@ const Register = () => {
     const photo = form.get("url");
     const email = form.get("email");
     const password = form.get("password");
+
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    setError("");
+    setSuccess("");
+    if (!passwordRegex.test(password)) {
+      const pError = (
+        <p className="text-sm text-red-700">
+          Password must contain at least one uppercase letter, one lowercase
+          letter, and be at least 6 characters long.
+        </p>
+      );
+      setError(pError);
+      return;
+    } else {
+      const pSuccess = (
+        <p className="text-sm text-green-700">Password contain success</p>
+      );
+      setSuccess(pSuccess);
+    }
 
     createUser(email, password)
       .then((result) => {
@@ -38,7 +58,13 @@ const Register = () => {
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
-        console.error(error);
+        if (error.message) {
+          const pAlready = (
+            <p className="text-sm text-red-900">Already this email exit.</p>
+          );
+          setError(pAlready);
+          return;
+        }
       });
   };
   return (
@@ -138,6 +164,8 @@ const Register = () => {
                   <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"></path>
                 </svg>
               </div>
+              {error}
+              {success}
               <button
                 className="bg-[#002D74] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#206ab1] font-medium"
                 type="submit"

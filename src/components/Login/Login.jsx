@@ -17,6 +17,7 @@ const Login = () => {
   const { signIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const [error, setError] = useState("");
 
   const auth = getAuth(app);
   const providerGoogle = new GoogleAuthProvider();
@@ -57,6 +58,18 @@ const Login = () => {
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
+    setError("");
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if (!passwordRegex.test(password)) {
+      const pError = (
+        <p className="text-sm text-red-700">
+          Password must contain at least one uppercase letter, one lowercase
+          letter, and be at least 6 characters long.
+        </p>
+      );
+      setError(pError);
+      return;
+    }
     signIn(email, password)
       .then((result) => {
         result.user;
@@ -75,7 +88,6 @@ const Login = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(`"checkk"${errorCode}`);
         console.log(`"checkk"${errorMessage}`);
         if (errorCode) {
           toast.error(`Your user and password don't match`, {
@@ -156,6 +168,7 @@ const Login = () => {
                   <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"></path>
                 </svg>
               </div>
+              {error}
               <button
                 className="bg-[#002D74] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#206ab1] font-medium"
                 type="submit"
