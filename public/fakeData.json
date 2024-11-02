@@ -8,8 +8,8 @@
     "status": "sale",
     "size": "12-inch pizza",
     "location": "New York, NY",
-    "facilities": ["Wood-fired oven", "Outdoor seating", "Gluten-free option"],
-    "image": "../src/assets/Food_1.png"
+    "facilities": ["Wood-fired oven", "Outdoor seating"],
+    "image": "https://i.ibb.co.com/9ynXyGF/Food-1.png"
   },
   {
     "id": "002",
@@ -21,7 +21,7 @@
     "size": "8-piece set",
     "location": "Los Angeles, CA",
     "facilities": ["Private dining", "Takeout", "Vegetarian options"],
-    "image": "../src/assets/Food_1.png"
+    "image": "https://i.ibb.co.com/RvvXg6m/Food-2.webp"
   },
   {
     "id": "003",
@@ -32,12 +32,8 @@
     "status": "sale",
     "size": "Medium serving",
     "location": "Chicago, IL",
-    "facilities": [
-      "Spicy level options",
-      "Outdoor seating",
-      "Vegetarian options"
-    ],
-    "image": "../src/assets/Food_3.png"
+    "facilities": ["Spicy level options", "Outdoor seating"],
+    "image": "https://i.ibb.co.com/X4qDvPr/Foood-3.png"
   },
   {
     "id": "004",
@@ -48,8 +44,8 @@
     "status": "sale",
     "size": "16 oz",
     "location": "Houston, TX",
-    "facilities": ["Open kitchen", "Bar", "Private dining"],
-    "image": "../src/assets/Food_4.png"
+    "facilities": ["Bar", "Private dining"],
+    "image": "https://i.ibb.co.com/8dbTN9L/Foood-6.png"
   },
   {
     "id": "005",
@@ -61,7 +57,7 @@
     "size": "Large bowl",
     "location": "San Francisco, CA",
     "facilities": ["Spicy option", "Vegan option", "Takeout"],
-    "image": "../src/assets/Food_1.png"
+    "image": "https://i.ibb.co.com/P4TL1Xx/Foood-4.png"
   },
   {
     "id": "006",
@@ -72,8 +68,8 @@
     "status": "sale",
     "size": "Family-sized",
     "location": "Miami, FL",
-    "facilities": ["Waterfront view", "Outdoor seating", "Gluten-free option"],
-    "image": "../src/assets/Food_2.png"
+    "facilities": ["Waterfront view", "Outdoor seating"],
+    "image": "https://i.ibb.co.com/sw6Z9rR/Foood-5.png"
   },
   {
     "id": "007",
@@ -85,7 +81,7 @@
     "size": "Large portion",
     "location": "Boston, MA",
     "facilities": ["Indoor dining", "Family-friendly", "Gluten-free option"],
-    "image": "../src/assets/Food_3.png"
+    "image": "https://i.ibb.co.com/RvvXg6m/Food-2.webp"
   },
   {
     "id": "008",
@@ -97,7 +93,7 @@
     "size": "6 oz burger",
     "location": "Dallas, TX",
     "facilities": ["Drive-thru", "Vegan option", "Outdoor seating"],
-    "image": "../src/assets/Food_4.png"
+    "image": "https://i.ibb.co.com/9ynXyGF/Food-1.webp"
   },
   {
     "id": "009",
@@ -109,6 +105,6 @@
     "size": "Single serving",
     "location": "Seattle, WA",
     "facilities": ["Indoor seating", "Takeout", "Gluten-free option"],
-    "image": "../src/assets/Food_3.png"
+    "image": "https://i.ibb.co.com/8dbTN9L/Foood-6.png"
   }
 ]

@@ -1,23 +1,23 @@
 import PropTypes from "prop-types";
-import Food_1 from "../../../assets/Food_3.png";
+import { Link } from "react-router-dom";
 
 const Food = ({ FoodData = {} }) => {
   const {
-    // id,
+    id,
     title,
     segment_name,
     description,
+    // status,
     price,
-    status,
     size,
-    location,
-    facilities,
+    // location,
+    // facilities,
     image,
   } = FoodData;
   return (
     <>
       <div
-        className="relative card bg-base-100 w-[408px] h-[408px]"
+        className="relative card bg-base-100 w-[408px] h-full"
         href="/books/6"
       >
         <figure className="absolute top-0 left-0 !items-start rounded-full z-10">
@@ -25,17 +25,20 @@ const Food = ({ FoodData = {} }) => {
             <img className="h-full w-auto" src={image}></img>
           </div>
         </figure>
-        <div className="absolute bottom-0 right-0 card-body bg-slate-700  font-Mulish max-h-[340px] sm:w-[340px] max-w-[340px] p-6 justify-end border border-gray-400 rounded-3xl">
+        <div className="mt-28 ml-auto card-body bg-slate-700  font-Mulish min-h-[340px] sm:w-[340px] max-w-[340px] p-6 justify-end border border-gray-400 rounded-3xl">
           <h2 className="card-title text-2xl font-bold text-white justify-end py-6 z-10">
             {price}$
           </h2>
           <div className="flex gap-4 flex-wrap z-10">
-            <span className="text-base text-green-500 font-medium rounded-full py-2 px-5 bg-green-50">
-              History
-            </span>
-            <span className="text-base text-green-500 font-medium rounded-full py-2 px-5 bg-green-50">
-              Anthropology
-            </span>
+            {/* {facilities.map((facilities, Index) => (
+              <span
+                key={Index}
+                className="text-base text-green-500 font-medium font-WorkSans rounded-full py-2 px-5 bg-green-50"
+              >
+                {facilities}
+              </span>
+            ))} */}
+            <p className="my-auto text-white">{description}</p>
           </div>
           <div className="flex justify-between flex-wrap py-3">
             <div>
@@ -46,11 +49,16 @@ const Food = ({ FoodData = {} }) => {
                 {segment_name}
               </p>
             </div>
-            <span className="my-auto text-white">Cart</span>
+            <span className="my-auto text-white">{size}</span>
           </div>
           <div className="flex justify-between flex-wrap py-3">
             <span className="text-base font-medium  text-white text-opacity-80 flex gap-2">
-              Review:
+              <Link
+                to={`food-view/${id}`}
+                className="px-3 py-1 md:py-2 md:px-4 rounded-full text-white btn-success font-semibold border border-green hover:bg-inherit bg-green-700 hover:text-white"
+              >
+                Food view
+              </Link>
             </span>
             <span className="text-base font-medium  text-white text-opacity-80 flex items-center gap-2">
               4.7

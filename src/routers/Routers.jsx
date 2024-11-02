@@ -7,6 +7,7 @@ import NotFound from "../components/shared/NotFound/NotFound";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import PrivateRoute from "../routers/PrivateRoute";
+import FoodView from "../components/Home/Foods/FoodView";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/food-view/:id",
+        element: <FoodView></FoodView>,
+        loader: () => fetch("/fakeData.json"),
       },
     ],
   },
