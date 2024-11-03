@@ -8,6 +8,8 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import PrivateRoute from "../routers/PrivateRoute";
 import FoodView from "../components/Home/Foods/FoodView";
+import Contact from "../components/Contact/Contact";
+import Healthy from "../components/Healthy/Healthy";
 
 const router = createBrowserRouter([
   {
@@ -22,11 +24,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: (
-          <PrivateRoute>
-            <About></About>
-          </PrivateRoute>
-        ),
+        element: <About></About>,
+      },
+      {
+        path: "/healthy",
+        element: <Healthy></Healthy>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
       },
       {
         path: "/login",
@@ -37,8 +43,12 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/food-view/:id",
-        element: <FoodView></FoodView>,
+        path: "/food-view/:idd",
+        element: (
+          <PrivateRoute>
+            <FoodView></FoodView>
+          </PrivateRoute>
+        ),
         loader: () => fetch("/fakeData.json"),
       },
     ],

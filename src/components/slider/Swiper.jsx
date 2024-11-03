@@ -11,24 +11,9 @@ export default function App() {
   return (
     <>
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-        {/* <SwiperSlide className="max-h-[80vh] rounded-xl">
-          <img src={Banner_1} alt="" className="max-h-full" />
-        </SwiperSlide>
-        <SwiperSlide className="max-h-[80vh] rounded-xl">
-          <img src={Banner_2} alt="" className="max-h-full" />
-        </SwiperSlide>
-        <SwiperSlide className="max-h-[80vh] rounded-xl">
-          <img src={Banner_3} alt="" className="max-h-full" />
-        </SwiperSlide>
-        <SwiperSlide className="max-h-[80vh] rounded-xl">
-          <img src={Banner_4} alt="" className="max-h-full" />
-        </SwiperSlide> */}
         <SwiperSlide className="">
           <div className="relative lg:max-h-[80vh] card image-full before:!bg-inherit before:bg-gradient-to-t before:from-[#150B2B]">
-            <div
-              className="h-full bg-cover bg-no-repeat bg-center"
-              //   style={{ backgroundImage: `url(${Banner_1})` }}
-            >
+            <div className="h-full bg-cover bg-no-repeat bg-center">
               <img
                 src={Banner_1}
                 alt=""
@@ -55,10 +40,7 @@ export default function App() {
         </SwiperSlide>
         <SwiperSlide className="">
           <div className="relative lg:max-h-[80vh] card image-full before:!bg-inherit before:bg-gradient-to-t before:from-[#150B2B]">
-            <div
-              className="h-full bg-cover bg-no-repeat bg-center"
-              //   style={{ backgroundImage: `url(${Banner_1})` }}
-            >
+            <div className="h-full bg-cover bg-no-repeat bg-center">
               <img
                 src={Banner_2}
                 alt=""
@@ -85,10 +67,7 @@ export default function App() {
         </SwiperSlide>
         <SwiperSlide className="">
           <div className="relative lg:max-h-[80vh] card image-full before:!bg-inherit before:bg-gradient-to-t before:from-[#150B2B]">
-            <div
-              className="h-full bg-cover bg-no-repeat bg-center"
-              //   style={{ backgroundImage: `url(${Banner_1})` }}
-            >
+            <div className="h-full bg-cover bg-no-repeat bg-center">
               <img
                 src={Banner_3}
                 alt=""
@@ -115,10 +94,7 @@ export default function App() {
         </SwiperSlide>
         <SwiperSlide className="">
           <div className="relative lg:max-h-[80vh] card image-full before:!bg-inherit before:bg-gradient-to-t before:from-[#150B2B]">
-            <div
-              className="h-full bg-cover bg-no-repeat bg-center"
-              //   style={{ backgroundImage: `url(${Banner_1})` }}
-            >
+            <div className="h-full bg-cover bg-no-repeat bg-center">
               <img
                 src={Banner_4}
                 alt=""

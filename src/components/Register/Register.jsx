@@ -3,6 +3,7 @@ import RegisterFood from "../../assets/registration.jpg";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -69,6 +70,9 @@ const Register = () => {
   };
   return (
     <>
+      <Helmet>
+        <title>Registration | Freshy Recipe Restaurant</title>
+      </Helmet>
       <section className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
         <div className="bg-slate-400 rounded-2xl flex max-w-3xl lg:w-[768px] p-5 items-center">
           <div className="md:w-1/2 px-6">

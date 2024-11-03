@@ -5,7 +5,6 @@ import { useState } from "react";
 const Foods = () => {
   const FoodData = useLoaderData();
   const [FoodLength, setFoodLength] = useState(6);
-  console.log(`food ${FoodData}`);
   return (
     <>
       <div className="max-w-[691px] mx-auto text-center pt-8 md:pt-16">

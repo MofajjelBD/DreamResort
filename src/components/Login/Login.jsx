@@ -12,6 +12,7 @@ import app from "../../firebase/firebase.config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -79,7 +80,7 @@ const Login = () => {
             icon: "success",
             title: "Welcome to Freshy",
             showConfirmButton: false,
-            timer: 1500,
+            timer: 2500,
           });
         }
         // navigate after login
@@ -104,6 +105,9 @@ const Login = () => {
   };
   return (
     <>
+      <Helmet>
+        <title>Login | Freshy Recipe Restaurant</title>
+      </Helmet>
       <section className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
         <ToastContainer></ToastContainer>
         <div className="bg-slate-400 rounded-2xl flex max-w-3xl lg:w-[768px] p-5 items-center">
