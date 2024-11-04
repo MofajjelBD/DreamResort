@@ -28,7 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/healthy",
-        element: <Healthy></Healthy>,
+        element: (
+          <PrivateRoute>
+            <Healthy></Healthy>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/contact",
