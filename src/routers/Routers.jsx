@@ -10,6 +10,7 @@ import PrivateRoute from "../routers/PrivateRoute";
 import FoodView from "../components/Home/Foods/FoodView";
 import Contact from "../components/Contact/Contact";
 import Healthy from "../components/Healthy/Healthy";
+import Update from "../components/UpdateUser/Update";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,14 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/update",
+        element: (
+          <PrivateRoute>
+            <Update></Update>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/food-view/:idd",

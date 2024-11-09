@@ -1,7 +1,7 @@
 import BookingSeat from "../../../assets/Booking.jpg";
 const Booking = () => {
   return (
-    <div className="my-6">
+    <div className="my-6 px-4">
       <div className="max-w-[691px] mx-auto text-center my-4">
         <h1 className="text-2xl md:text-4xl font-black dark:text-slate-200 text-opacity-100 dark:text-opacity-100">
           RESERVE YOUR SEAT

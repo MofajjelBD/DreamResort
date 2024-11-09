@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import "animate.css";
 
 import Banner_1 from "../../assets/1.jpg";
 import Banner_2 from "../../assets/2.jpg";
@@ -22,10 +23,10 @@ export default function App() {
             </div>
             <div className="my-auto mx-auto py-0 px-10 md:px-24 justify-center w-full h-full !absolute card-body flex md:items-start">
               <div className="max-w-[420px] text-start">
-                <h1 className="font-bold text-lg md:leading-8 lg:leading-10 md:text-[26px] lg:text-[36px] text-white text-center sm:text-start mx-auto lg:mb-2">
+                <h1 className="animate__animated animate__bounce font-bold text-lg md:leading-8 lg:leading-10 md:text-[26px] lg:text-[36px] text-white text-center sm:text-start mx-auto lg:mb-2">
                   Finally, the dish you have been waiting for your table
                 </h1>
-                <p className="text-white text-sm md:text-base lg:leading-8 text-center sm:text-start md:mb-2">
+                <p className="animate__animated animate__fadeIn text-white text-sm md:text-base lg:leading-8 text-center sm:text-start md:mb-2">
                   For super nutrition, the chic and health conscious flock to
                   Freshy.
                 </p>
@@ -49,10 +50,10 @@ export default function App() {
             </div>
             <div className="my-auto mx-auto py-0 px-10 md:px-24 justify-center w-full h-full !absolute card-body flex md:items-start">
               <div className="max-w-[420px] text-start">
-                <h1 className="font-bold text-lg md:leading-8 lg:leading-10 md:text-[26px] lg:text-[36px] text-white text-center sm:text-start mx-auto lg:mb-2">
+                <h1 className="animate__animated animate__bounce font-bold text-lg md:leading-8 lg:leading-10 md:text-[26px] lg:text-[36px] text-white text-center sm:text-start mx-auto lg:mb-2">
                   Finally, the dish you have been waiting for your table
                 </h1>
-                <p className="text-white text-sm md:text-base lg:leading-8 text-center sm:text-start md:mb-2">
+                <p className="animate__animated animate__fadeIn text-white text-sm md:text-base lg:leading-8 text-center sm:text-start md:mb-2">
                   For super nutrition, the chic and health conscious flock to
                   Freshy.
                 </p>
@@ -76,10 +77,10 @@ export default function App() {
             </div>
             <div className="my-auto mx-auto py-0 px-10 md:px-24 justify-center w-full h-full !absolute card-body flex md:items-start">
               <div className="max-w-[420px] text-start">
-                <h1 className="font-bold text-lg md:leading-8 lg:leading-10 md:text-[26px] lg:text-[36px] text-white text-center sm:text-start mx-auto lg:mb-2">
+                <h1 className="animate__animated animate__bounce font-bold text-lg md:leading-8 lg:leading-10 md:text-[26px] lg:text-[36px] text-white text-center sm:text-start mx-auto lg:mb-2">
                   Finally, the dish you have been waiting for your table
                 </h1>
-                <p className="text-white text-sm md:text-base lg:leading-8 text-center sm:text-start md:mb-2">
+                <p className="animate__animated animate__fadeIn text-white text-sm md:text-base lg:leading-8 text-center sm:text-start md:mb-2">
                   For super nutrition, the chic and health conscious flock to
                   Freshy.
                 </p>
@@ -103,10 +104,10 @@ export default function App() {
             </div>
             <div className="my-auto mx-auto py-0 px-10 md:px-24 justify-center w-full h-full !absolute card-body flex md:items-start">
               <div className="max-w-[420px] text-start">
-                <h1 className="font-bold text-lg md:leading-8 lg:leading-10 md:text-[26px] lg:text-[36px] text-white text-center sm:text-start mx-auto lg:mb-2">
+                <h1 className="animate__animated animate__bounce font-bold text-lg md:leading-8 lg:leading-10 md:text-[26px] lg:text-[36px] text-white text-center sm:text-start mx-auto lg:mb-2">
                   Finally, the dish you have been waiting for your table
                 </h1>
-                <p className="text-white text-sm md:text-base lg:leading-8 text-center sm:text-start md:mb-2">
+                <p className="animate__animated animate__fadeIn text-white text-sm md:text-base lg:leading-8 text-center sm:text-start md:mb-2">
                   For super nutrition, the chic and health conscious flock to
                   Freshy.
                 </p>

@@ -1,5 +1,8 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Food = ({ FoodData = {} }) => {
   const {
@@ -14,11 +17,17 @@ const Food = ({ FoodData = {} }) => {
     // facilities,
     image,
   } = FoodData;
+  useEffect(() => {
+    AOS.init({
+      duration: 1500, // Animation duration in milliseconds
+    });
+  }, []);
   return (
     <>
       <div
-        className="relative card bg-base-100 w-[408px] h-full"
+        className="relative card bg-base-100 w-[400px] h-full"
         href="/books/6"
+        data-aos="zoom-in-up"
       >
         <figure className="absolute top-0 left-0 !items-start rounded-full z-10">
           <div className="bg-transparent rounded-[16px] max-h-[240px] max-w-[240px] justify-center flex shadow-xl">
