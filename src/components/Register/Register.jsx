@@ -1,12 +1,14 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import RegisterFood from "../../assets/registration.jpg";
 import { useContext, useState } from "react";
+import { doc, setDoc } from "firebase/firestore";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, db, auth } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -18,11 +20,12 @@ const Register = () => {
   const handleImageLoad = () => {
     setIsLoadingRegister(false);
   };
+
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const name = form.get("name");
-    const photo = form.get("url");
+    const photoURL = form.get("url");
     const email = form.get("email");
     const password = form.get("password");
 
@@ -38,37 +41,51 @@ const Register = () => {
       );
       setError(pError);
       return;
-    } else {
-      const pSuccess = (
-        <p className="text-sm text-green-700">Password contain success</p>
-      );
-      setSuccess(pSuccess);
     }
 
-    createUser(email, password)
+    // Create user with email and password
+    createUser(auth, email, password)
       .then((result) => {
-        if (result.user) {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Registration successful",
-            showConfirmButton: false,
-            timer: 2500,
+        const user = result.user;
+
+        // Update profile with name and photoURL
+        return updateProfile(user, {
+          displayName: name,
+          photoURL: photoURL,
+        }).then(() => {
+          // Save additional user info to Firestore
+          return setDoc(doc(db, "users", user.uid), {
+            name: name,
+            email: email,
+            photoURL: photoURL,
+            createdAt: new Date(),
           });
-        }
+        });
+      })
+      .then(() => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Registration successful",
+          showConfirmButton: false,
+          timer: 2500,
+        });
         // navigate after Registration
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
-        if (error.message) {
+        if (error.message === "Firebase: Error (auth/email-already-in-use).") {
           const pAlready = (
             <p className="text-sm text-red-900">Already this email exit.</p>
           );
           setError(pAlready);
           return;
+        } else {
+          setError("Registration error: " + error.message);
         }
       });
   };
+
   return (
     <>
       <Helmet>

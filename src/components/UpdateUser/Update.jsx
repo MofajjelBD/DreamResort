@@ -1,6 +1,12 @@
+import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Update = () => {
+  const { user } = useContext(AuthContext);
+  const userName = user.displayName;
+  const userEmail = user.email;
+
   return (
     <div>
       <Helmet>
@@ -18,7 +24,7 @@ const Update = () => {
                   <input
                     type="text"
                     name="text"
-                    value=""
+                    value={userName}
                     placeholder="Name"
                     className="w-full bg-gray-100 rounded-lg py-3 px-6 text-sm outline-none"
                     required
@@ -39,7 +45,7 @@ const Update = () => {
                   <input
                     type="url"
                     name="url"
-                    value=""
+                    value={user.photoURL}
                     placeholder="Url"
                     className="w-full bg-gray-100 rounded-lg py-3 px-6 text-sm outline-none"
                     required
@@ -60,7 +66,7 @@ const Update = () => {
                   <input
                     type="email"
                     name="email"
-                    value="ssss"
+                    value={userEmail}
                     placeholder="Email"
                     className="w-full bg-gray-100 rounded-lg py-3 px-6 text-sm outline-none"
                     disabled

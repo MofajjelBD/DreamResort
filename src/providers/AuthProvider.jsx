@@ -6,19 +6,20 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-
 import app from "../firebase/firebase.config";
 import PropTypes from "prop-types";
+import { getFirestore } from "firebase/firestore";
 
 export const AuthContext = createContext(null);
 
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const createUser = (email, password) => {
+  const createUser = (auth, email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const signIn = (email, password) => {
@@ -45,6 +46,8 @@ const AuthProvider = ({ children }) => {
     logOut,
     user,
     loading,
+    db,
+    auth,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
