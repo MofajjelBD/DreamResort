@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import RegisterFood from "../../assets/registration.jpg";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const { createUser, db, auth } = useContext(AuthContext);
+  const { createUser, db, auth, user } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -20,7 +20,11 @@ const Register = () => {
   const handleImageLoad = () => {
     setIsLoadingRegister(false);
   };
-
+  useEffect(() => {
+    if (user) {
+      navigate("/"); // Redirect to home if already logged in
+    }
+  }, [user, navigate]);
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);

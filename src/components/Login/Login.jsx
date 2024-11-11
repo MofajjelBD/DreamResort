@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import LoginFood from "../../assets/login.jpg";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import {
   getAuth,
@@ -15,7 +15,7 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, user } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const [error, setError] = useState("");
@@ -24,6 +24,12 @@ const Login = () => {
   const auth = getAuth(app);
   const providerGoogle = new GoogleAuthProvider();
   const provider = new GithubAuthProvider();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/"); // Redirect to home if already logged in
+    }
+  }, [user, navigate]);
 
   const handleGoogleSingIn = () => {
     signInWithPopup(auth, providerGoogle)
