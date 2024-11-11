@@ -4,7 +4,6 @@ import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut, loading } = useContext(AuthContext);
-  const pLink = user.photoURL;
   const handleSignOut = () => {
     logOut().then().catch();
   };
@@ -73,7 +72,7 @@ const Navbar = () => {
                 className="btn btn-ghost btn-circle avatar group/item relative"
               >
                 <div className="w-10 rounded-full">
-                  <img alt="Profile" src={pLink} />
+                  <img alt="Profile" src={user.photoURL} />
                 </div>
                 <span className="absolute top-1/3 right-14 group/edit invisible group-hover/item:visible group-hover/edit:text-gray-700 z-[11]">
                   {user.displayName}
