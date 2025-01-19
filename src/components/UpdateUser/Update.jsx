@@ -47,7 +47,7 @@ const Update = () => {
   return (
     <div>
       <Helmet>
-        <title>Update profile | Freshy Recipe Restaurant</title>
+        <title>Update profile | Dream Resort</title>
       </Helmet>
       <div className="font-[sans-serif] max-w-6xl mx-auto relative bg-white rounded-lg py-6 px-4">
         <div className="grid lg:grid-cols-6 items-center justify-center">

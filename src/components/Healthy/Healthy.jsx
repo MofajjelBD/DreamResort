@@ -4,7 +4,7 @@ const Healthy = () => {
   return (
     <>
       <Helmet>
-        <title>Why Healthy | Freshy Recipe Restaurant</title>
+        <title>Why Healthy | Dream Resort</title>
       </Helmet>
       <section className="py-8 relative xl:mr-0 lg:mr-5 mr-0">
         <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">

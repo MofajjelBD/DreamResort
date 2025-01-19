@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div>
       <Helmet>
-        <title>Contact Us | Freshy Recipe Restaurant</title>
+        <title>Contact Us | Dream Resort</title>
       </Helmet>
       <div className="font-[sans-serif] max-w-6xl mx-auto relative bg-white rounded-lg py-6">
         <div className="grid lg:grid-cols-3 items-center">
@@ -66,7 +66,7 @@ const Contact = () => {
               <h4 className="text-gray-800 text-base font-bold mt-4">
                 Chat to us
               </h4>
-              <p className="text-sm text-gray-600 mt-2">info@freshy.com</p>
+              <p className="text-sm text-gray-600 mt-2">info@dreamresort.com</p>
             </div>
             <div className="flex flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
               <svg

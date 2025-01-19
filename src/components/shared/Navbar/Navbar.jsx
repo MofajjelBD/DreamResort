@@ -51,7 +51,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl px-0">Freshy</a>
+        <a className="btn btn-ghost text-xl px-0">Dream Resort</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-2">{navLinks}</ul>
@@ -84,7 +84,7 @@ const Navbar = () => {
               >
                 <li>
                   <Link to="/update" className="justify-between">
-                    Profile Update
+                    Update Profile
                   </Link>
                 </li>
                 <li>

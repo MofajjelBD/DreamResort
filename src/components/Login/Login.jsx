@@ -113,7 +113,7 @@ const Login = () => {
   return (
     <>
       <Helmet>
-        <title>Login | Freshy Recipe Restaurant</title>
+        <title>Login | Dream Resort</title>
       </Helmet>
       <section className="p-4 min-h-screen-minus-244 flex box-border justify-center items-center">
         <ToastContainer></ToastContainer>

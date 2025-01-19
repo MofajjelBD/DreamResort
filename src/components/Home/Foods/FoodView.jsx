@@ -42,7 +42,7 @@ const FoodView = () => {
   return (
     <div className="mx-auto px-4 lg:px-0 my-8">
       <Helmet>
-        <title>Food View | Freshy Recipe Restaurant</title>
+        <title>Food View | Dream Resort</title>
       </Helmet>
       <div className="grid grid-cols-2 gap-12">
         <div className="col-span-2 md:col-span-1 grid">

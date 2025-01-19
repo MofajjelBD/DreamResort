@@ -9,12 +9,12 @@ const Testimonial = () => {
   return (
     <>
       <div className="px-4">
-        <div className="max-w-[691px] mx-auto text-center pt-8 md:pt-16 font-kurale">
+        <div className="max-w-[710px] mx-auto text-center pt-8 md:pt-16 font-kurale">
           <h1 className="text-lg md:text-3xl text-red-900 font-serif dark:text-slate-200 text-opacity-100 dark:text-opacity-100">
             Testimonial
           </h1>
           <p className="text-lg md:text-4xl font-black dark:text-slate-200 text-opacity-100 dark:text-opacity-100 font-Inter pt-5 pb-2">
-            All ours best meals in one delicious snap
+            All our best properties in one stunning view.
           </p>
         </div>
         <Swiper
@@ -64,17 +64,22 @@ const Testimonial = () => {
                     </span>
                   </div>
                   <p className="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
-                    This recipe turned out amazing! The flavors were perfectly
-                    balanced, and it was easy to follow. Definitely adding this
-                    to my favorites!
+                    This property exceeded our expectations! The layout is
+                    perfect, and the neighborhood is quiet and welcoming. We are
+                    so happy with our choice!
                   </p>
                 </div>
                 <div className="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
-                  <img
-                    className="rounded-full h-10 w-10 object-cover"
-                    src="https://pagedone.io/asset/uploads/1696229969.png"
-                    alt="avatar"
-                  />
+                  <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                    <svg
+                      className="absolute w-12 h-12 text-gray-400 -left-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
+                    </svg>
+                  </div>
                   <div className="block">
                     <h5 className="text-gray-900 font-medium transition-all duration-500  mb-1">
                       Jane D
@@ -105,17 +110,22 @@ const Testimonial = () => {
                     </span>
                   </div>
                   <p className="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
-                    I love how simple yet delicious this recipe is! The
-                    ingredients are fresh, and the taste is authentic. My family
-                    loved it.
+                    The home was exactly as described—spacious, modern, and in a
+                    great location. Moving in was a breeze. Definitely
+                    recommending this to friends!
                   </p>
                 </div>
                 <div className="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
-                  <img
-                    className="rounded-full h-10 w-10 object-cover"
-                    src="https://pagedone.io/asset/uploads/1696229969.png"
-                    alt="avatar"
-                  />
+                  <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                    <svg
+                      className="absolute w-12 h-12 text-gray-400 -left-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
+                    </svg>
+                  </div>
                   <div className="block">
                     <h5 className="text-gray-900 font-medium transition-all duration-500  mb-1">
                       Jane D
@@ -146,17 +156,22 @@ const Testimonial = () => {
                     </span>
                   </div>
                   <p className="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
-                    This was my first time trying this recipe, and I’m
-                    impressed! The instructions were clear, and the dish came
-                    out perfectly.
+                    Our experience here has been amazing! The amenities are
+                    top-notch, and the community is so friendly. We are thrilled
+                    with our new home with our new home.
                   </p>
                 </div>
                 <div className="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
-                  <img
-                    className="rounded-full h-10 w-10 object-cover"
-                    src="https://pagedone.io/asset/uploads/1696229969.png"
-                    alt="avatar"
-                  />
+                  <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                    <svg
+                      className="absolute w-12 h-12 text-gray-400 -left-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
+                    </svg>
+                  </div>
                   <div className="block">
                     <h5 className="text-gray-900 font-medium transition-all duration-500 mb-1">
                       Melon Sha
@@ -187,16 +202,22 @@ const Testimonial = () => {
                     </span>
                   </div>
                   <p className="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
-                    A fantastic recipe! I didn’t expect it to be this flavorful.
-                    It’s now a go-to meal in my weekly cooking routine.
+                    We couldn’t be happier with this property! The design is
+                    stunning, and everything is so well-maintained. It instantly
+                    felt like home felt like home.
                   </p>
                 </div>
                 <div className="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
-                  <img
-                    className="rounded-full h-10 w-10 object-cover"
-                    src="https://pagedone.io/asset/uploads/1696229969.png"
-                    alt="avatar"
-                  />
+                  <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                    <svg
+                      className="absolute w-12 h-12 text-gray-400 -left-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
+                    </svg>
+                  </div>
                   <div className="block">
                     <h5 className="text-gray-900 font-medium transition-all duration-500  mb-1">
                       Jon Doe
@@ -227,16 +248,22 @@ const Testimonial = () => {
                     </span>
                   </div>
                   <p className="text-base text-gray-600 leading-6  transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">
-                    Tried this recipe for dinner tonight, and it was a hit! The
-                    steps were easy, and the dish tasted absolutely amazing.
+                    This rental is perfect! The location is unbeatable, and the
+                    apartment is cozy and modern. We’ve had a fantastic
+                    experience so far experience so far!
                   </p>
                 </div>
                 <div className="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
-                  <img
-                    className="rounded-full h-10 w-10 object-cover"
-                    src="https://pagedone.io/asset/uploads/1696229969.png"
-                    alt="avatar"
-                  />
+                  <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                    <svg
+                      className="absolute w-12 h-12 text-gray-400 -left-1"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
+                    </svg>
+                  </div>
                   <div className="block">
                     <h5 className="text-gray-900 font-medium transition-all duration-500  mb-1">
                       Broun

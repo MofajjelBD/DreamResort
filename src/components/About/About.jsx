@@ -6,30 +6,32 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About | Freshy Recipe Restaurant</title>
+        <title>About | Dream Resort</title>
       </Helmet>
       <section className="bg-white dark:bg-gray-900">
         <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
           <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
             <h2 className="mb-4 text-indigo-700 text-4xl tracking-tight font-extrabold dark:text-white">
-              Freshly Made for You
+              Crafted with Care Just for You
             </h2>
             <p className="mb-4">
-              At <strong className="font-bold italic ">Freshy</strong> Freshy,
-              our recipes are rooted in tradition and elevated by creativity.
-              Every dish is thoughtfully crafted with fresh ingredients, rich
-              flavors, and a touch of culinary innovation. From savory
-              appetizers to mouthwatering main courses, each recipe is designed
-              to bring out the best in every ingredient. Whether it’s our
-              signature pasta, slow-cooked meats, or indulgent desserts, every
-              bite promises a balance of flavor, texture, and taste. We believe
-              in making every meal a memorable experience, where passion meets
-              the plate, and where quality is always the key ingredient.
+              At <strong className="font-bold italic ">Dream Resort</strong> our
+              company, we take pride in offering homes that are rooted in
+              quality and elevated by modern design. Each property is
+              thoughtfully curated with the finest materials, expert
+              craftsmanship, and a touch of innovation. From cozy apartments to
+              luxurious estates, every home is designed to provide comfort and
+              style. Whether it's a charming townhouse, a spacious family home,
+              or a contemporary apartment, each property promises a perfect
+              blend of functionality, aesthetics, and value. We believe in
+              making every living experience a memorable one, where attention to
+              detail meets excellence, and where quality is always our top
+              priority.
             </p>
             <p>
-              At our restaurant, we take pride in crafting dishes with the
-              freshest ingredients, combining traditional flavors with
-              innovative techniques
+              This version adapts the focus from food to homes and real estate,
+              while keeping a similar tone and structure. Let me know if you'd
+              like any further changes!
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4 mt-8">

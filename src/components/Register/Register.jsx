@@ -93,7 +93,7 @@ const Register = () => {
   return (
     <>
       <Helmet>
-        <title>Registration | Freshy Recipe Restaurant</title>
+        <title>Registration | Dream Resort</title>
       </Helmet>
       <div className="p-4">
         <section className="min-h-screen-minus-244 flex box-border justify-center items-center">

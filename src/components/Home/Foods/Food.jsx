@@ -10,11 +10,11 @@ const Food = ({ FoodData = {} }) => {
     title,
     segment_name,
     description,
-    // status,
+    status,
     price,
     size,
     location,
-    // facilities,
+    facilities,
     image,
   } = FoodData;
   useEffect(() => {
@@ -25,7 +25,7 @@ const Food = ({ FoodData = {} }) => {
   return (
     <>
       <div
-        className="relative card bg-base-100 w-[400px] h-full"
+        className="relative card bg-base-100 w-[400px]"
         href="/books/6"
         data-aos="zoom-in-up"
       >
@@ -39,17 +39,19 @@ const Food = ({ FoodData = {} }) => {
             {price}$
           </h2>
           <div className="flex gap-4 flex-wrap z-10">
-            {/* {facilities.map((facilities, Index) => (
+            <p className="my-auto text-white">{description}</p>
+          </div>
+          <div className="flex gap-4 flex-wrap z-10">
+            {facilities.map((facilities, Index) => (
               <span
                 key={Index}
                 className="text-base text-green-500 font-medium font-WorkSans rounded-full py-2 px-5 bg-green-50"
               >
                 {facilities}
               </span>
-            ))} */}
-            <p className="my-auto text-white">{description}</p>
+            ))}
           </div>
-          <div className="flex justify-between flex-wrap py-3">
+          <div className="justify-between py-3">
             <div>
               <h2 className="card-title text-2xl font-bold text-white">
                 {title}
@@ -59,18 +61,22 @@ const Food = ({ FoodData = {} }) => {
               </p>
             </div>
             <span className="my-auto text-white">{size}</span>
+            <span className="text-lg font-medium  text-white text-opacity-80 flex items-center gap-2">
+              {location}
+            </span>
           </div>
+
           <div className="flex justify-between flex-wrap py-3">
             <span className="text-base font-medium  text-white text-opacity-80 flex gap-2">
               <Link
                 to={`/food-view/${id}`}
                 className="px-3 py-1 md:py-2 md:px-4 rounded-full text-white btn-success font-semibold border border-green hover:bg-inherit bg-green-700 hover:text-white"
               >
-                Food view
+                View Property
               </Link>
             </span>
             <span className="text-lg font-medium  text-white text-opacity-80 flex items-center gap-2">
-              {location}
+              {status}
             </span>
           </div>
         </div>
