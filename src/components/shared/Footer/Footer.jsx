@@ -8,8 +8,8 @@ const Footer = () => {
           <Link to="/about" className="link link-hover">
             About
           </Link>
-          <Link to="/healthy" className="link link-hover">
-            Healthy
+          <Link to="/Essence" className="link link-hover">
+            Essence
           </Link>
           <Link to="/contact" className="link link-hover">
             Contact

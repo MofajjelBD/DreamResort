@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "freshy-developer",
+    "site": "real-estate-dream-resort",
     "public": "dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [

@@ -9,7 +9,7 @@ import Register from "../components/Register/Register";
 import PrivateRoute from "../routers/PrivateRoute";
 import FoodView from "../components/Home/Foods/FoodView";
 import Contact from "../components/Contact/Contact";
-import Healthy from "../components/Healthy/Healthy";
+import Essence from "../components/Essence/Essence";
 import Update from "../components/UpdateUser/Update";
 
 const router = createBrowserRouter([
@@ -28,10 +28,10 @@ const router = createBrowserRouter([
         element: <About></About>,
       },
       {
-        path: "/healthy",
+        path: "/Essence",
         element: (
           <PrivateRoute>
-            <Healthy></Healthy>
+            <Essence></Essence>
           </PrivateRoute>
         ),
       },
