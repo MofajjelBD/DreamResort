@@ -68,7 +68,7 @@ const Essence = () => {
                       <p className="text-gray-500 text-base font-normal leading-relaxed">
                         Our thoughtfully designed living spaces and welcoming
                         environment are crafted to make every stay a celebration
-                        of comfort and community."
+                        of comfort and community.
                       </p>
                     </div>
                     <div className="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
