@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import LoginFood from "../../assets/login.jpg";
+import LoginProperty from "../../assets/login.jpg";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import {
@@ -266,9 +266,9 @@ const Login = () => {
               className={`rounded-2xl max-h-[1600px] ${
                 isLoadingLogin ? "hidden" : "block"
               }`}
-              src={LoginFood}
+              src={LoginProperty}
               onLoad={handleImageLoad} // Set loading to false when the image is loaded
-              alt="Login Food" // Add alt attribute for accessibility
+              alt="Login Property" // Add alt attribute for accessibility
             />
           </div>
         </div>

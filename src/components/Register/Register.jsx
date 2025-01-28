@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import RegisterFood from "../../assets/registration.jpg";
+import RegisterProperty from "../../assets/registration.jpg";
 import { useContext, useEffect, useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -231,9 +231,9 @@ const Register = () => {
                 className={`rounded-2xl max-h-[1600px] ${
                   isLoadingRegister ? "hidden" : "block"
                 }`}
-                src={RegisterFood}
+                src={RegisterProperty}
                 onLoad={handleImageLoad} // Set loading to false when the image is loaded
-                alt="Login Food" // Add alt attribute for accessibility
+                alt="Login Property" // Add alt attribute for accessibility
               />
             </div>
           </div>

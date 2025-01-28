@@ -2,22 +2,22 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useLoaderData, useLocation, useParams } from "react-router-dom";
 
-const FoodView = () => {
-  const Foods = useLoaderData();
+const PropertyView = () => {
+  const Property_s = useLoaderData();
   const { idd } = useParams();
   const locationDirectory = useLocation();
 
-  const [FoodData, setFoodData] = useState(null);
+  const [PropertyData, setPropertyData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   // Fetch the book based on the dynamic id
   useEffect(() => {
-    if (Array.isArray(Foods)) {
-      const foundFood = Foods.find((Food) => Food.id === idd);
-      setFoodData(foundFood);
+    if (Array.isArray(Property_s)) {
+      const foundProperty = Property_s.find((Property) => Property.id === idd);
+      setPropertyData(foundProperty);
       setLoading(false);
     }
-  }, [Foods, idd, locationDirectory]);
+  }, [Property_s, idd, locationDirectory]);
 
   const {
     // id,
@@ -30,9 +30,9 @@ const FoodView = () => {
     location,
     facilities,
     image,
-  } = FoodData || {};
+  } = PropertyData || {};
 
-  if (loading || !FoodData) {
+  if (loading || !PropertyData) {
     return (
       <div className="flex justify-center items-center">
         <div className="animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-blue-900"></div>
@@ -42,7 +42,7 @@ const FoodView = () => {
   return (
     <div className="mx-auto px-4 lg:px-0 my-8">
       <Helmet>
-        <title>Food View | Dream Resort</title>
+        <title>Property View | Dream Resort</title>
       </Helmet>
       <div className="grid grid-cols-2 gap-12">
         <div className="col-span-2 md:col-span-1 grid">
@@ -120,4 +120,4 @@ const FoodView = () => {
   );
 };
 
-export default FoodView;
+export default PropertyView;

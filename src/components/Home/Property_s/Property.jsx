@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Food = ({ FoodData = {} }) => {
+const Property = ({ PropertyData = {} }) => {
   const {
     id,
     title,
@@ -16,7 +16,7 @@ const Food = ({ FoodData = {} }) => {
     location,
     facilities,
     image,
-  } = FoodData;
+  } = PropertyData;
   useEffect(() => {
     AOS.init({
       duration: 1500, // Animation duration in milliseconds
@@ -69,7 +69,7 @@ const Food = ({ FoodData = {} }) => {
           <div className="flex justify-between flex-wrap py-3">
             <span className="text-base font-medium  text-white text-opacity-80 flex gap-2">
               <Link
-                to={`/food-view/${id}`}
+                to={`/property-view/${id}`}
                 className="px-3 py-1 md:py-2 md:px-4 rounded-full text-white btn-success font-semibold border border-green hover:bg-inherit bg-green-700 hover:text-white"
               >
                 View Property
@@ -84,9 +84,9 @@ const Food = ({ FoodData = {} }) => {
     </>
   );
 };
-Food.propTypes = {
-  FoodData: PropTypes.any,
+Property.propTypes = {
+  PropertyData: PropTypes.any,
   title: PropTypes.any,
 };
 
-export default Food;
+export default Property;

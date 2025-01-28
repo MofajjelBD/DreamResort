@@ -1,10 +1,10 @@
 import { useLoaderData } from "react-router-dom";
-import Food from "./Food";
+import Property from "./Property";
 import { useState } from "react";
 
-const Foods = () => {
-  const FoodData = useLoaderData();
-  const [FoodLength, setFoodLength] = useState(6);
+const Property_s = () => {
+  const PropertyData = useLoaderData();
+  const [PropertyLength, setPropertyLength] = useState(6);
   return (
     <>
       <div className="px-4">
@@ -17,19 +17,23 @@ const Foods = () => {
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-2 md:gap-6 my-2 md:my-8">
-          {FoodData.slice(0, FoodLength).map((FoodData) => (
-            <Food key={FoodData.id} FoodData={FoodData}></Food>
+          {PropertyData.slice(0, PropertyLength).map((PropertyData) => (
+            <Property
+              key={PropertyData.id}
+              PropertyData={PropertyData}
+            ></Property>
           ))}
           <div>
             <button
-              onClick={() => setFoodLength(FoodData.length)}
+              onClick={() => setPropertyLength(PropertyData.length)}
               className={
-                FoodLength === FoodData.length || FoodData.length <= 6
+                PropertyLength === PropertyData.length ||
+                PropertyData.length <= 6
                   ? "hidden"
                   : "btn font-WorkSans text-white text-opacity-100 font-semibold text-base md:text-lg border border-transparent bg-green-500 px-5 hover:bg-green-500"
               }
             >
-              Show All Foods
+              Show All Property_s
             </button>
           </div>
         </div>
@@ -38,4 +42,4 @@ const Foods = () => {
   );
 };
 
-export default Foods;
+export default Property_s;

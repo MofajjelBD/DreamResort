@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Swiper from "../../components/slider/Swiper";
 import Booking from "./Booking/Booking";
-import Foods from "./Foods/Foods";
+import Property_s from "./Property_s/Property_s";
 import Testimonial from "./Testimonial/Testimonial";
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
         <title>Home | Dream Resort</title>
       </Helmet>
       <Swiper></Swiper>
-      <Foods></Foods>
+      <Property_s></Property_s>
       <Testimonial></Testimonial>
       <Booking></Booking>
     </>

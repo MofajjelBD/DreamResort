@@ -7,7 +7,7 @@ import NotFound from "../components/shared/NotFound/NotFound";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import PrivateRoute from "../routers/PrivateRoute";
-import FoodView from "../components/Home/Foods/FoodView";
+import PropertyView from "../components/Home/Property_s/PropertyView";
 import Contact from "../components/Contact/Contact";
 import Essence from "../components/Essence/Essence";
 import Update from "../components/UpdateUser/Update";
@@ -56,10 +56,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/food-view/:idd",
+        path: "/property-view/:idd",
         element: (
           <PrivateRoute>
-            <FoodView></FoodView>
+            <PropertyView></PropertyView>
           </PrivateRoute>
         ),
         loader: () => fetch("/fakeData.json"),

@@ -29,9 +29,9 @@ const About = () => {
               priority.
             </p>
             <p>
-              This version adapts the focus from food to homes and real estate,
-              while keeping a similar tone and structure. Let me know if you'd
-              like any further changes!
+              This version adapts the focus from Property to homes and real
+              estate, while keeping a similar tone and structure. Let me know if
+              you'd like any further changes!
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4 mt-8">
